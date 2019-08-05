@@ -103,7 +103,9 @@ middleLogo.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 //Contact Section
 let contact=document.querySelector('.contact');
 contact.childNodes[1].textContent=siteContent["contact"]["contact-h4"];
-contact.childNodes[3].textContent=siteContent["contact"]["address"];
+let addressArray = siteContent['contact']['address'].split(' ');
+addressArray.splice(4, 0, '\r\n');
+contact.childNodes[3].innerText=addressArray.join(' ');
 contact.childNodes[5].textContent=siteContent["contact"]["phone"];
 contact.childNodes[7].textContent=siteContent["contact"]["email"];
 
@@ -113,3 +115,10 @@ footer.textContent=siteContent["footer"]["copyright"];
 
 
 // console.log(contact.childNodes[]);
+
+//Button Listener
+let alertButton=document.querySelector('button');
+alertButton.addEventListener('click',event=>{
+  alert("You clicked a button!");
+})
+
