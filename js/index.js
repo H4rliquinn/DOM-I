@@ -62,7 +62,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //Cta Section
 let cta=document.querySelector('.cta-text h1');
-cta.textContent=siteContent["cta"]["h1"];
+let ctaMsg=siteContent["cta"]["h1"];
+let pos=ctaMsg.indexOf("Is");
+ctaMsg=ctaMsg.substring(0,pos)+"<BR>"+ctaMsg.substring(pos+2,3)+"<BR>"+ctaMsg.substring(pos+2);
+cta.innerHTML=ctaMsg;
 
 let button=document.querySelector('.cta-text button');
 button.textContent=siteContent["cta"]["button"];
