@@ -75,26 +75,39 @@ ctaLogo.setAttribute('src', siteContent["cta"]["img-src"])
 
 //Main Content
 
-let main=document.querySelectorAll('.text-content');
+// let main=document.querySelectorAll('.text-content');
 
 // for (i=0;i<main.length;i++){
 //   console.log(main[i]);
 // }
 
-main[0].childNodes[1].textContent= siteContent["main-content"]["features-h4"];
-main[0].childNodes[3].textContent= siteContent["main-content"]["features-content"];
+// main[0].childNodes[1].textContent= siteContent["main-content"]["features-h4"];
+// main[0].childNodes[3].textContent= siteContent["main-content"]["features-content"];
 
-main[1].childNodes[1].textContent= siteContent["main-content"]["about-h4"];
-main[1].childNodes[3].textContent= siteContent["main-content"]["about-content"];
+// main[1].childNodes[1].textContent= siteContent["main-content"]["about-h4"];
+// main[1].childNodes[3].textContent= siteContent["main-content"]["about-content"];
 
-main[2].childNodes[1].textContent= siteContent["main-content"]["services-h4"];
-main[2].childNodes[3].textContent= siteContent["main-content"]["services-content"];
+// main[2].childNodes[1].textContent= siteContent["main-content"]["services-h4"];
+// main[2].childNodes[3].textContent= siteContent["main-content"]["services-content"];
 
-main[3].childNodes[1].textContent= siteContent["main-content"]["product-h4"];
-main[3].childNodes[3].textContent= siteContent["main-content"]["product-content"];
+// main[3].childNodes[1].textContent= siteContent["main-content"]["product-h4"];
+// main[3].childNodes[3].textContent= siteContent["main-content"]["product-content"];
 
-main[4].childNodes[1].textContent= siteContent["main-content"]["vision-h4"];
-main[4].childNodes[3].textContent= siteContent["main-content"]["vision-content"];
+// main[4].childNodes[1].textContent= siteContent["main-content"]["vision-h4"];
+// main[4].childNodes[3].textContent= siteContent["main-content"]["vision-content"];
+
+let contentHeader = document.querySelectorAll(".text-content h4");
+let mainContent = siteContent ["main-content"];
+let arr = Object.keys (mainContent).filter(obj => obj.includes("h4"));
+for (let i=0; i<contentHeader.length; i++) {
+  contentHeader[i].textContent = siteContent["main-content"][`${arr[i]}`]
+}
+
+let contentText = document.querySelectorAll(".text-content p");
+arr = Object.keys (mainContent).filter(obj => obj.includes("content"));
+for (let i=0; i<contentHeader.length; i++) {
+  contentText[i].textContent = siteContent["main-content"][`${arr[i]}`]
+}
 
 //Middle image
 let middleLogo = document.getElementById("middle-img");
