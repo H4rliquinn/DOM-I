@@ -119,6 +119,14 @@ footer.textContent=siteContent["footer"]["copyright"];
 //Button Listener
 let alertButton=document.querySelector('button');
 alertButton.addEventListener('click',event=>{
-  alert("You clicked a button!");
+  // alert("You clicked a button!");
+  let area=document.querySelector('.cta-text');
+  area.style.backgroundColor="red";
+
+  setTimeout(function(){
+    area.style.backgroundColor="white";
+    }
+  , 3000);
 })
+
 
